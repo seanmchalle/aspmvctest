@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+@section featured {
+ <div class="hero-unit">
+ <h2>Welcome to www.MyProjectTest.com</h2>
+@* TABLE FOR STUDENT*@
+ <h3>List of Students</h3>
+ <table class="table table-striped">
+ <thead>
+ <tr>
+ @for (int x = 0; x <= 3; x++ )
+ {
+    <td>@ViewBag.HeaderStudent[x]</td>
+ }
+ </tr>
+ </thead>
+ <tbody>
+  @for (int x = 0; x <= 2; x++)
+  {
+      <tr>
+       @for (int y = 0; y <= 3; y++)
+       {
+            <td> @ViewBag.Student[x, y]</td> 
+       }
+       </tr> 
+  }
+</tbody>
+</table>
+@* TABLE FOR SUBJECTS*@
+ <h3>Subject Table</h3>
+ <table class="table table-striped">
+ <thead>
+ <tr>
+ @for (int x = 0; x <= 1; x++ )
+ {
+    <td>@ViewBag.HeaderSubject[x]</td>
+ }
+ </tr>
+ </thead>
+ <tbody>
+  @for (int x = 0; x <= 5; x++)
+  {
+      <tr>
+       @for (int y = 0; y <= 1; y++)
+       {
+            <td> @ViewBag.Subjects[x, y]</td> 
+       }
+       </tr> 
+  }
+</tbody>
+</table>
+ </div>
+  }
+
+
+@Html.ActionLink("Home >>", "../", null, new { @class = "btn btn-primary btn-large" })

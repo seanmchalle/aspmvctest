@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "News";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+
+@section featured {
+ <div class="hero-unit">
+ <h2>Welcome to www.MyProjectTest.com</h2>
+ <p>News Page</p>
+ </div>
+}
+
+@Html.ActionLink("Home >>","../", null,new { @class="btn btn-primary btn-large" })
